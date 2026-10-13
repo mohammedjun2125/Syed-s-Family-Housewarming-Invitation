@@ -1,0 +1,6 @@
+{
+  "name": "Syed's Family Housewarming Invitation",
+  "description": "An interactive, mobile-first 3D Islamic digital invitation for Syed's Family housewarming ceremony on Saturday, 17 October 2026.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

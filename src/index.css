@@ -1,0 +1,149 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-emerald: #123B30;
+    --color-forest: #0B211B;
+    --color-antique-gold: #C6A15B;
+    --color-champagne-gold: #E6C781;
+    --color-parchment: #F4EBDD;
+    --color-antique-brown: #33241F;
+  }
+
+  body {
+    background-color: #0B211B;
+    color: #F4EBDD;
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, .font-serif {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+
+  .font-amiri {
+    font-family: 'Amiri', 'Noto Nastaliq Urdu', serif;
+  }
+
+  .font-urdu {
+    font-family: 'Noto Nastaliq Urdu', serif;
+    line-height: 2.2;
+    direction: rtl;
+    text-rendering: optimizeLegibility;
+  }
+}
+
+/* 3D Perspective and Book Transforms */
+.perspective-container {
+  perspective: 1200px;
+  perspective-origin: center center;
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Gold foil gradient effect */
+.gold-text-gradient {
+  background: linear-gradient(135deg, #FFF5DF 0%, #E6C781 35%, #C6A15B 70%, #9F7932 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-foil-bg {
+  background: linear-gradient(135deg, #E6C781 0%, #C6A15B 40%, #E6C781 70%, #B89248 100%);
+}
+
+.parchment-texture {
+  background-color: #F6EFE5;
+  background-image: 
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.45) 0%, transparent 65%),
+    radial-gradient(circle at 100% 0%, rgba(198, 161, 91, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 0% 100%, rgba(198, 161, 91, 0.12) 0%, transparent 50%);
+}
+
+.leather-texture {
+  background: linear-gradient(145deg, #164639 0%, #123B30 45%, #0d2922 80%, #081a15 100%);
+  box-shadow: inset 0 0 45px rgba(0, 0, 0, 0.75), 0 20px 45px rgba(0, 0, 0, 0.75);
+}
+
+/* Subtle Islamic Star Pattern */
+.islamic-pattern-bg {
+  background-color: #0B211B;
+  background-image: radial-gradient(circle at 50% 50%, rgba(18, 59, 48, 0.85) 0%, rgba(11, 33, 27, 0.98) 100%),
+    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23c6a15b' fill-opacity='0.04' fill-rule='evenodd'%3E%3Cpath d='M30 30L15 15l15-15 15 15-15 15zm0 0l-15 15 15 15 15-15-15-15zm-15 0L0 15l15-15 15 15-15 15zm30 0L45 15l15-15 15 15-15 15z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Slow Girih Mandala Rotation */
+@keyframes spinExtremelySlow {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.animate-spin-extremely-slow {
+  animation: spinExtremelySlow 140s linear infinite;
+}
+
+/* Lantern Sway Animation */
+@keyframes lanternSway {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  30% {
+    transform: rotate(1.8deg);
+  }
+  70% {
+    transform: rotate(-1.8deg);
+  }
+}
+
+.animate-lantern-sway {
+  animation: lanternSway 7s ease-in-out infinite;
+}
+
+/* Shimmer animation */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(230, 199, 129, 0) 0%,
+    rgba(255, 246, 224, 0.45) 50%,
+    rgba(230, 199, 129, 0) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 4s infinite linear;
+}
+
+/* Custom scrollbar for clean luxury feel */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0B211B;
+}
+::-webkit-scrollbar-thumb {
+  background: #C6A15B40;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C6A15B90;
+}
