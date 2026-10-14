@@ -94,7 +94,7 @@ export const EVENT_CONFIG: EventConfig = {
   familyMembers: {
     elders: [
       { name: "SYED AKBAR SAHAB", prefix: "LATE", honorific: "Mr. & Mrs." },
-      { name: "SYED KAZAM SAHAB", prefix: "LATE", honorific: "Mr. & Mrs." },
+      { name: "SYED KAZAM SAHAB", prefix: "LATE", honorific: "Mr." },
     ],
     hosts: [
       { name: "SYED KHALIL SHEBAZ" },

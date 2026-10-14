@@ -235,14 +235,14 @@ export const InvitationPage: React.FC<InvitationPageProps> = ({ onClose }) => {
                 <span className="w-12 h-[1px] bg-gradient-to-r from-transparent via-[#C6A15B]/40 to-transparent" />
               </div>
 
-              {/* LATE MR. & MRS. SYED KAZAM SAHAB */}
+              {/* LATE MR. SYED KAZAM SAHAB */}
               <div className="flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2.5 px-2">
                 <div className="flex items-center gap-1.5">
                   <span className="inline-block px-2.5 py-0.5 rounded-full border border-[#C6A15B]/60 bg-[#FAF1DD] text-[#8F6B2C] font-serif text-[11px] sm:text-xs font-bold tracking-[0.2em] shadow-sm uppercase">
                     LATE
                   </span>
                   <span className="inline-flex items-center px-2 py-0.5 rounded-md border border-[#C6A15B]/35 bg-[#FFFDF8] text-[#7A561E] font-serif text-[11px] sm:text-xs tracking-wider italic font-semibold shadow-xs">
-                    Mr. &amp; Mrs.
+                    Mr.
                   </span>
                 </div>
                 <h3 className="font-serif text-xl sm:text-2xl md:text-3xl font-bold tracking-wide text-[#123B30] uppercase">
