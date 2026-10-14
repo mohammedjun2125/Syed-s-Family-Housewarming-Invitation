@@ -21,7 +21,7 @@ export interface EventConfig {
     targetDateIso: string;
   };
   familyMembers: {
-    elders: Array<{ name: string; prefix: string }>;
+    elders: Array<{ name: string; prefix: string; honorific?: string }>;
     hosts: Array<{ name: string }>;
   };
   time: {
@@ -93,8 +93,8 @@ export const EVENT_CONFIG: EventConfig = {
   },
   familyMembers: {
     elders: [
-      { name: "SYED AKBAR SAHAB", prefix: "LATE" },
-      { name: "SYED KAZAM SAHAB", prefix: "LATE" },
+      { name: "SYED AKBAR SAHAB", prefix: "LATE", honorific: "Mr. & Mrs." },
+      { name: "SYED KAZAM SAHAB", prefix: "LATE", honorific: "Mr. & Mrs." },
     ],
     hosts: [
       { name: "SYED KHALIL SHEBAZ" },

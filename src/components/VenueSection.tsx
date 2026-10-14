@@ -5,6 +5,8 @@ import { OrnateDivider, RoyalIslamicEmblem } from './IslamicOrnaments';
 import { RSVPButton } from './RSVPButton';
 
 export const VenueSection: React.FC<{ className?: string }> = ({ className = '' }) => {
+  const [copied, setCopied] = React.useState(false);
+
   const handleOpenMaps = () => {
     window.open(EVENT_CONFIG.venue.mapsUrl, '_blank', 'noopener,noreferrer');
   };
@@ -13,18 +15,24 @@ export const VenueSection: React.FC<{ className?: string }> = ({ className = '' 
     if (navigator.share) {
       try {
         await navigator.share({
-          title: "Syed's Family | Housewarming Invitation",
-          text: `You're warmly invited to Syed's Family Housewarming Ceremony on Saturday, 17 October 2026, after Maghrib.\nVenue: ${EVENT_CONFIG.venue.mapsUrl}`,
+          title: "Housewarming Ceremony - 17 October 2026",
+          text: `You're warmly invited to the Housewarming Ceremony on Saturday, 17 October 2026, after Maghrib.\nVenue: ${EVENT_CONFIG.venue.mapsUrl}`,
           url: window.location.href,
         });
+        return;
       } catch {
         // Share cancelled
       }
-    } else {
-      navigator.clipboard.writeText(
-        `Syed's Family Housewarming Ceremony - Saturday, 17 October 2026, after Maghrib.\nVenue: ${EVENT_CONFIG.venue.mapsUrl}\n${window.location.href}`
+    }
+    
+    try {
+      await navigator.clipboard.writeText(
+        `Housewarming Ceremony - Saturday, 17 October 2026, after Maghrib.\nVenue: ${EVENT_CONFIG.venue.mapsUrl}\n${window.location.href}`
       );
-      alert('Invitation details copied to clipboard!');
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2500);
+    } catch {
+      // ignore
     }
   };
 
@@ -95,7 +103,7 @@ export const VenueSection: React.FC<{ className?: string }> = ({ className = '' 
             className="text-xs text-[#C6A15B] hover:text-[#E6C781] inline-flex items-center gap-2 py-2 px-3.5 rounded-lg border border-[#C6A15B]/40 hover:border-[#C6A15B] transition-colors"
           >
             <Share2 className="w-3.5 h-3.5" />
-            <span>Share Invitation</span>
+            <span>{copied ? 'Link Copied to Clipboard!' : 'Share Invitation'}</span>
           </button>
         </div>
       </div>

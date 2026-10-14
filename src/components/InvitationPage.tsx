@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { EVENT_CONFIG } from '../config/event';
 import {
   CornerOrnament,
@@ -9,19 +9,48 @@ import { TwinklingGoldParticles } from './TwinklingGoldParticles';
 import { CountdownTimer } from './CountdownTimer';
 import { EventDetails } from './EventDetails';
 import { VenueSection } from './VenueSection';
-import { BookMarked, ArrowUp } from 'lucide-react';
+import { BlessingWall } from './BlessingWall';
+import { FloatingActionBar } from './FloatingActionBar';
+import { BookMarked, ArrowUp, Share2, Check } from 'lucide-react';
 
 interface InvitationPageProps {
   onClose: () => void;
 }
 
 export const InvitationPage: React.FC<InvitationPageProps> = ({ onClose }) => {
+  const [copied, setCopied] = useState(false);
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const handleShare = async () => {
+    const shareData = {
+      title: "Housewarming Ceremony - 17 October 2026",
+      text: "You are cordially invited to celebrate our new home on Saturday, 17 October 2026, after Maghrib.",
+      url: window.location.href,
+    };
+
+    if (navigator.share) {
+      try {
+        await navigator.share(shareData);
+        return;
+      } catch {
+        // Fallback to clipboard
+      }
+    }
+
+    try {
+      await navigator.clipboard.writeText(window.location.href);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2500);
+    } catch {
+      // ignore
+    }
+  };
+
   return (
-    <div className="w-full max-w-2xl mx-auto px-3 sm:px-6 py-6 pb-24 select-text animate-in fade-in duration-700">
+    <div className="w-full max-w-2xl mx-auto px-3 sm:px-6 py-6 pb-28 select-text animate-in fade-in duration-700">
       {/* Top Navigation Bar: Close Invitation / Re-fold Book */}
       <div className="flex items-center justify-between mb-5 sticky top-3 z-30 px-2">
         <button
@@ -34,11 +63,33 @@ export const InvitationPage: React.FC<InvitationPageProps> = ({ onClose }) => {
           <span>CLOSE INVITATION</span>
         </button>
 
-        {/* Top Showcase Badge */}
-        <div className="flex items-center gap-2 bg-[#0B211B]/90 px-4 py-1.5 rounded-full border border-[#C6A15B]/50 shadow-md">
-          <span className="text-xs uppercase font-serif tracking-widest text-[#E6C781] font-semibold">
-            HOUSEWARMING CEREMONY
-          </span>
+        <div className="flex items-center gap-2">
+          {/* Share Button in Header */}
+          <button
+            onClick={handleShare}
+            type="button"
+            className="min-h-[44px] px-3.5 py-2 rounded-full border border-[#C6A15B]/60 bg-[#0B211B]/95 backdrop-blur-md text-[#E6C781] hover:text-[#FFF] hover:border-[#E6C781] hover:bg-[#123B30] text-xs uppercase tracking-wider font-medium flex items-center gap-1.5 shadow-md transition-all active:scale-95"
+            title="Share Invitation Link"
+          >
+            {copied ? (
+              <>
+                <Check className="w-3.5 h-3.5 text-emerald-300" />
+                <span className="hidden sm:inline text-[11px]">COPIED</span>
+              </>
+            ) : (
+              <>
+                <Share2 className="w-3.5 h-3.5 text-[#C6A15B]" />
+                <span className="hidden sm:inline text-[11px]">SHARE</span>
+              </>
+            )}
+          </button>
+
+          {/* Top Showcase Badge */}
+          <div className="hidden sm:flex items-center gap-2 bg-[#0B211B]/90 px-4 py-1.5 rounded-full border border-[#C6A15B]/50 shadow-md">
+            <span className="text-xs uppercase font-serif tracking-widest text-[#E6C781] font-semibold">
+              HOUSEWARMING CEREMONY
+            </span>
+          </div>
         </div>
       </div>
 
@@ -154,18 +205,23 @@ export const InvitationPage: React.FC<InvitationPageProps> = ({ onClose }) => {
             <div className="flex items-center justify-center gap-2 mb-4 relative z-10">
               <span className="h-[1px] w-10 sm:w-16 bg-gradient-to-r from-transparent to-[#C6A15B]" />
               <span className="text-[10px] sm:text-xs font-serif uppercase tracking-[0.24em] text-[#8F6B2C] font-semibold">
-                In Revered Remembrance & Honour
+                In Revered Remembrance &amp; Duas
               </span>
               <span className="h-[1px] w-10 sm:w-16 bg-gradient-to-l from-transparent to-[#C6A15B]" />
             </div>
 
-            {/* Late Elders Names: Large, bold, clearly highlighted with word 'LATE' preserved */}
-            <div className="space-y-3 sm:space-y-3.5 mb-5 sm:mb-6 relative z-10">
-              {/* LATE SYED AKBAR SAHAB */}
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2.5">
-                <span className="inline-block px-2.5 py-0.5 rounded-full border border-[#C6A15B]/50 bg-[#FAF1DD] text-[#8F6B2C] font-serif text-xs sm:text-sm font-bold tracking-[0.2em] shadow-sm uppercase">
-                  LATE
-                </span>
+            {/* Late Elders Names: Large, bold, clearly highlighted with word 'LATE' preserved & small cute aesthetic 'Mr. & Mrs.' */}
+            <div className="space-y-3.5 sm:space-y-4 mb-5 sm:mb-6 relative z-10">
+              {/* LATE MR. & MRS. SYED AKBAR SAHAB */}
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2.5 px-2">
+                <div className="flex items-center gap-1.5">
+                  <span className="inline-block px-2.5 py-0.5 rounded-full border border-[#C6A15B]/60 bg-[#FAF1DD] text-[#8F6B2C] font-serif text-[11px] sm:text-xs font-bold tracking-[0.2em] shadow-sm uppercase">
+                    LATE
+                  </span>
+                  <span className="inline-flex items-center px-2 py-0.5 rounded-md border border-[#C6A15B]/35 bg-[#FFFDF8] text-[#7A561E] font-serif text-[11px] sm:text-xs tracking-wider italic font-semibold shadow-xs">
+                    Mr. &amp; Mrs.
+                  </span>
+                </div>
                 <h3 className="font-serif text-xl sm:text-2xl md:text-3xl font-bold tracking-wide text-[#123B30] uppercase">
                   SYED AKBAR SAHAB
                 </h3>
@@ -178,11 +234,16 @@ export const InvitationPage: React.FC<InvitationPageProps> = ({ onClose }) => {
                 <span className="w-12 h-[1px] bg-gradient-to-r from-transparent via-[#C6A15B]/40 to-transparent" />
               </div>
 
-              {/* LATE SYED KAZAM SAHAB */}
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2.5">
-                <span className="inline-block px-2.5 py-0.5 rounded-full border border-[#C6A15B]/50 bg-[#FAF1DD] text-[#8F6B2C] font-serif text-xs sm:text-sm font-bold tracking-[0.2em] shadow-sm uppercase">
-                  LATE
-                </span>
+              {/* LATE MR. & MRS. SYED KAZAM SAHAB */}
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2.5 px-2">
+                <div className="flex items-center gap-1.5">
+                  <span className="inline-block px-2.5 py-0.5 rounded-full border border-[#C6A15B]/60 bg-[#FAF1DD] text-[#8F6B2C] font-serif text-[11px] sm:text-xs font-bold tracking-[0.2em] shadow-sm uppercase">
+                    LATE
+                  </span>
+                  <span className="inline-flex items-center px-2 py-0.5 rounded-md border border-[#C6A15B]/35 bg-[#FFFDF8] text-[#7A561E] font-serif text-[11px] sm:text-xs tracking-wider italic font-semibold shadow-xs">
+                    Mr. &amp; Mrs.
+                  </span>
+                </div>
                 <h3 className="font-serif text-xl sm:text-2xl md:text-3xl font-bold tracking-wide text-[#123B30] uppercase">
                   SYED KAZAM SAHAB
                 </h3>
@@ -289,6 +350,9 @@ export const InvitationPage: React.FC<InvitationPageProps> = ({ onClose }) => {
       {/* Venue Section (Google Maps Directions & WhatsApp RSVP) */}
       <VenueSection className="mt-4" />
 
+      {/* Interactive Blessing & Du'a Wall for the New Home */}
+      <BlessingWall className="mt-4" />
+
       {/* Bottom Controls */}
       <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8 pb-10 text-center">
         <button
@@ -309,6 +373,9 @@ export const InvitationPage: React.FC<InvitationPageProps> = ({ onClose }) => {
           <span>Back to Top</span>
         </button>
       </div>
+
+      {/* Discreet Floating Action Bar for Mobile & Desktop Navigation */}
+      <FloatingActionBar />
     </div>
   );
 };

@@ -10,7 +10,7 @@ export const RSVPButton: React.FC<{ className?: string }> = ({ className = '' })
   const getWhatsAppUrl = () => {
     let message = EVENT_CONFIG.contact.whatsappMessage;
     if (guestName.trim()) {
-      message = `Assalamu Alaikum! This is ${guestName.trim()}. Thank you for inviting me to Syed's Family housewarming ceremony on Saturday, 17 October 2026, after Maghrib. I would like to confirm our presence (${attendeeCount} ${attendeeCount === '1' ? 'guest' : 'guests'}).`;
+      message = `Assalamu Alaikum! This is ${guestName.trim()}. Thank you for inviting me to the housewarming ceremony on Saturday, 17 October 2026, after Maghrib. I would like to confirm our presence (${attendeeCount} ${attendeeCount === '1' ? 'guest' : 'guests'}).`;
     }
     return `https://wa.me/${EVENT_CONFIG.contact.phoneDigits}?text=${encodeURIComponent(message)}`;
   };

@@ -10,6 +10,7 @@ import { OpeningAnimation } from './OpeningAnimation';
 import { InvitationPage } from './InvitationPage';
 import { BookOpen } from 'lucide-react';
 import { soundEffects } from '../services/soundEffects';
+import { backgroundMusic } from '../services/backgroundMusic';
 
 export const InvitationBook: React.FC = () => {
   const [invitationState, setInvitationState] = useState<'closed' | 'opening' | 'opened'>('closed');
@@ -17,6 +18,8 @@ export const InvitationBook: React.FC = () => {
 
   const handleOpen = () => {
     if (invitationState !== 'closed') return;
+    backgroundMusic.play(true);
+    soundEffects.setMuted(false);
     setInvitationState('opening');
   };
 
