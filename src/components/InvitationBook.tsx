@@ -95,10 +95,10 @@ export const InvitationBook: React.FC = () => {
               {EVENT_CONFIG.bismillah.transliteration}
             </h2>
 
-            {/* Showcase Syed's Family */}
+            {/* Auspicious Ceremony Badge */}
             <div className="inline-flex items-center gap-2 mt-2.5 px-5 py-1.5 rounded-full border border-[#C6A15B]/60 bg-[#0B211B]/90 shadow-md">
               <span className="font-serif text-xs uppercase tracking-widest text-[#E6C781] font-bold">
-                {EVENT_CONFIG.family}
+                HOUSEWARMING CEREMONY
               </span>
             </div>
 

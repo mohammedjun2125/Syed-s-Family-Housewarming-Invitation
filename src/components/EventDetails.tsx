@@ -60,7 +60,7 @@ export const EventDetails: React.FC<{ className?: string }> = ({ className = '' 
             {EVENT_CONFIG.occasion}
           </div>
           <div className="text-xs text-[#E6C781]/90 mt-1 font-serif">
-            {EVENT_CONFIG.family}
+            A Blessed New Beginning
           </div>
         </div>
       </div>

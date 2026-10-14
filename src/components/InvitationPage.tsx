@@ -6,6 +6,7 @@ import {
   OrnateDivider,
 } from './IslamicOrnaments';
 import { TwinklingGoldParticles } from './TwinklingGoldParticles';
+import { CountdownTimer } from './CountdownTimer';
 import { EventDetails } from './EventDetails';
 import { VenueSection } from './VenueSection';
 import { BookMarked, ArrowUp } from 'lucide-react';
@@ -33,20 +34,18 @@ export const InvitationPage: React.FC<InvitationPageProps> = ({ onClose }) => {
           <span>CLOSE INVITATION</span>
         </button>
 
-        {/* Syed's Family Top Showcase Badge */}
+        {/* Top Showcase Badge */}
         <div className="flex items-center gap-2 bg-[#0B211B]/90 px-4 py-1.5 rounded-full border border-[#C6A15B]/50 shadow-md">
           <span className="text-xs uppercase font-serif tracking-widest text-[#E6C781] font-semibold">
-            {EVENT_CONFIG.family}
+            HOUSEWARMING CEREMONY
           </span>
         </div>
       </div>
 
       {/* Main Vintage Ivory Parchment Manuscript Card */}
       <article
-        className="relative parchment-texture rounded-2xl sm:rounded-3xl p-6 sm:p-10 md:p-14 text-[#0B211B] shadow-[0_24px_60px_rgba(0,0,0,0.85),_0_2px_8px_rgba(198,161,91,0.25)] border-2 border-[#C6A15B] overflow-hidden"
-        style={{
-          boxShadow: '0 24px 60px rgba(0,0,0,0.7), inset 0 0 50px rgba(198,161,91,0.2)',
-        }}
+        aria-label="Housewarming Formal Invitation Letter"
+        className="relative bg-[#FAF5EB] text-[#222] rounded-2xl p-6 sm:p-10 md:p-12 shadow-[0_24px_60px_rgba(0,0,0,0.65),_0_2px_8px_rgba(198,161,91,0.25)] border-2 border-[#C6A15B] overflow-hidden"
       >
         {/* Live Shining / Twinkling Golden Dots on Parchment */}
         <TwinklingGoldParticles count={22} />
@@ -96,7 +95,7 @@ export const InvitationPage: React.FC<InvitationPageProps> = ({ onClose }) => {
           </span>
         </section>
 
-        {/* Center: Royal Crest of Syed's Family with Minimal Arabic Masha'Allah */}
+        {/* Center: Royal Crest Emblem with Minimal Arabic Masha'Allah */}
         <section className="text-center my-3 relative z-10">
           <div className="flex justify-center mb-2">
             <RoyalIslamicEmblem size={80} />
@@ -107,31 +106,9 @@ export const InvitationPage: React.FC<InvitationPageProps> = ({ onClose }) => {
           </p>
         </section>
 
-        {/* Prominent Host Showcase: Syed's Family */}
-        <section className="text-center my-5 px-3 relative z-10">
-          <span className="font-serif text-xs uppercase tracking-[0.22em] text-[#7A561E] font-bold block mb-1">
-            Formal Invitation From
-          </span>
-          <div className="inline-block p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-[#123B30] via-[#1a4f41] to-[#123B30] border-2 border-[#C6A15B] shadow-lg text-white my-1">
-            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold tracking-wider gold-text-gradient uppercase my-0.5">
-              {EVENT_CONFIG.family}
-            </h2>
-            <p className="text-xs uppercase tracking-widest text-[#FFF4D9]/80 mt-1 font-serif">
-              Warmly Invites You To Celebrate Our New Home
-            </p>
-          </div>
-        </section>
-
-        {/* Opening Warm Greeting in Clear English */}
-        <section className="text-center my-4 px-2 sm:px-6 relative z-10">
-          <p className="font-serif text-base sm:text-lg text-[#164639] leading-relaxed max-w-lg mx-auto italic font-medium">
-            "{EVENT_CONFIG.copy.invitationGreeting}"
-          </p>
-        </section>
-
         {/* Strongest Visual Centerpiece: Housewarming Ceremony Title */}
         <section className="text-center my-6 py-6 px-4 rounded-xl bg-[#FAF5EB]/95 border-2 border-[#C6A15B]/60 shadow-inner relative z-10">
-          <h1 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold tracking-wider text-[#0B211B] mb-1 uppercase leading-tight">
+          <h1 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-wider text-[#0B211B] mb-1 uppercase leading-tight">
             {EVENT_CONFIG.occasion}
           </h1>
 
@@ -142,8 +119,115 @@ export const InvitationPage: React.FC<InvitationPageProps> = ({ onClose }) => {
           </p>
         </section>
 
+        {/* 1. Main Invitation Greeting */}
+        <section className="text-center my-5 px-2 sm:px-6 relative z-10">
+          <p className="font-serif text-base sm:text-xl md:text-2xl text-[#123B30] leading-relaxed max-w-xl mx-auto italic font-medium">
+            "{EVENT_CONFIG.copy.invitationGreeting}"
+          </p>
+        </section>
+
+        {/* Display the family names prominently beneath this message in a Refined Ornamental Frame */}
+        <section
+          aria-label="Family Names"
+          className="my-6 sm:my-8 relative z-10"
+        >
+          <div className="relative rounded-2xl p-5 sm:p-7 md:p-8 bg-gradient-to-b from-[#FFFDF8] via-[#FAF3E2] to-[#FFFDF8] border-2 border-[#C6A15B] shadow-[0_12px_32px_rgba(18,59,48,0.14),_inset_0_0_20px_rgba(198,161,91,0.18)] text-center overflow-hidden">
+            {/* Double Antique Gold Ornamental Inner Frame */}
+            <div className="absolute inset-2 sm:inset-3 border border-[#C6A15B]/55 rounded-xl pointer-events-none" />
+            <div className="absolute inset-3 sm:inset-4 border border-[#C6A15B]/30 border-dashed rounded-lg pointer-events-none" />
+
+            {/* Antique Gold Arabesque Filigree Corner Accents */}
+            <div className="absolute top-3 left-3 text-[#C6A15B] text-lg select-none pointer-events-none leading-none opacity-80">
+              ❖
+            </div>
+            <div className="absolute top-3 right-3 text-[#C6A15B] text-lg select-none pointer-events-none leading-none opacity-80">
+              ❖
+            </div>
+            <div className="absolute bottom-3 left-3 text-[#C6A15B] text-lg select-none pointer-events-none leading-none opacity-80">
+              ❖
+            </div>
+            <div className="absolute bottom-3 right-3 text-[#C6A15B] text-lg select-none pointer-events-none leading-none opacity-80">
+              ❖
+            </div>
+
+            {/* Respectful Reverence Header for Late Elders */}
+            <div className="flex items-center justify-center gap-2 mb-4 relative z-10">
+              <span className="h-[1px] w-10 sm:w-16 bg-gradient-to-r from-transparent to-[#C6A15B]" />
+              <span className="text-[10px] sm:text-xs font-serif uppercase tracking-[0.24em] text-[#8F6B2C] font-semibold">
+                In Revered Remembrance & Honour
+              </span>
+              <span className="h-[1px] w-10 sm:w-16 bg-gradient-to-l from-transparent to-[#C6A15B]" />
+            </div>
+
+            {/* Late Elders Names: Large, bold, clearly highlighted with word 'LATE' preserved */}
+            <div className="space-y-3 sm:space-y-3.5 mb-5 sm:mb-6 relative z-10">
+              {/* LATE SYED AKBAR SAHAB */}
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2.5">
+                <span className="inline-block px-2.5 py-0.5 rounded-full border border-[#C6A15B]/50 bg-[#FAF1DD] text-[#8F6B2C] font-serif text-xs sm:text-sm font-bold tracking-[0.2em] shadow-sm uppercase">
+                  LATE
+                </span>
+                <h3 className="font-serif text-xl sm:text-2xl md:text-3xl font-bold tracking-wide text-[#123B30] uppercase">
+                  SYED AKBAR SAHAB
+                </h3>
+              </div>
+
+              {/* Decorative gold divider between the two elders */}
+              <div className="flex items-center justify-center gap-2 my-1.5 text-[#C6A15B]/60">
+                <span className="w-12 h-[1px] bg-gradient-to-r from-transparent via-[#C6A15B]/40 to-transparent" />
+                <span className="text-[10px]">✦</span>
+                <span className="w-12 h-[1px] bg-gradient-to-r from-transparent via-[#C6A15B]/40 to-transparent" />
+              </div>
+
+              {/* LATE SYED KAZAM SAHAB */}
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2.5">
+                <span className="inline-block px-2.5 py-0.5 rounded-full border border-[#C6A15B]/50 bg-[#FAF1DD] text-[#8F6B2C] font-serif text-xs sm:text-sm font-bold tracking-[0.2em] shadow-sm uppercase">
+                  LATE
+                </span>
+                <h3 className="font-serif text-xl sm:text-2xl md:text-3xl font-bold tracking-wide text-[#123B30] uppercase">
+                  SYED KAZAM SAHAB
+                </h3>
+              </div>
+            </div>
+
+            {/* Refined Decorative Gold Divider Between Elders & Hosts */}
+            <div className="my-6 flex items-center justify-center gap-3 relative z-10">
+              <span className="h-[1.5px] flex-1 max-w-[90px] sm:max-w-[140px] bg-gradient-to-r from-transparent via-[#C6A15B] to-transparent" />
+              <div className="flex items-center gap-2 text-[#C6A15B]">
+                <span className="text-xs">✦</span>
+                <span className="w-2.5 h-2.5 rotate-45 border border-[#C6A15B] bg-[#123B30]" />
+                <span className="text-xs">✦</span>
+              </div>
+              <span className="h-[1.5px] flex-1 max-w-[90px] sm:max-w-[140px] bg-gradient-to-l from-transparent via-[#C6A15B] to-transparent" />
+            </div>
+
+            {/* Hosts Section: Especially Prominent while maintaining equal respect */}
+            <div className="space-y-3.5 sm:space-y-4 relative z-10">
+              <span className="text-[11px] sm:text-xs font-serif uppercase tracking-[0.24em] text-[#7A561E] font-bold block mb-1">
+                Warmly Invited By
+              </span>
+
+              {/* SYED KHALIL SHEBAZ */}
+              <div className="relative py-2.5 sm:py-3 px-4 rounded-xl bg-gradient-to-r from-[#123B30]/5 via-[#123B30]/10 to-[#123B30]/5 border border-[#C6A15B]/40 shadow-sm">
+                <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-wider text-[#0B211B] uppercase leading-tight">
+                  SYED KHALIL SHEBAZ
+                </h2>
+              </div>
+
+              {/* SYED ARIF HAMZA */}
+              <div className="relative py-2.5 sm:py-3 px-4 rounded-xl bg-gradient-to-r from-[#123B30]/5 via-[#123B30]/10 to-[#123B30]/5 border border-[#C6A15B]/40 shadow-sm">
+                <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-wider text-[#0B211B] uppercase leading-tight">
+                  SYED ARIF HAMZA
+                </h2>
+              </div>
+            </div>
+
+            {/* Bottom Subtle Antique Gold Accent */}
+            <div className="w-36 h-[1.5px] bg-gradient-to-r from-transparent via-[#C6A15B] to-transparent mx-auto mt-6" />
+          </div>
+        </section>
+
         {/* Invitation Body Paragraph in Clear English */}
-        <section className="text-center my-5 px-3 sm:px-8 relative z-10">
+        <section className="text-center my-6 px-3 sm:px-8 relative z-10">
           <p className="font-serif text-sm sm:text-base text-[#1E3A32] leading-relaxed max-w-lg mx-auto">
             {EVENT_CONFIG.copy.invitationBody}
           </p>
@@ -153,7 +237,7 @@ export const InvitationPage: React.FC<InvitationPageProps> = ({ onClose }) => {
         <section className="my-7 relative z-10">
           <div className="text-center mb-3">
             <span className="font-serif text-xs uppercase tracking-[0.25em] text-[#7A561E] font-bold block">
-              Syed's Family Blessed Residence
+              Our Blessed Residence
             </span>
             <OrnateDivider width="w-40 sm:w-56" className="my-2" />
           </div>
@@ -162,7 +246,7 @@ export const InvitationPage: React.FC<InvitationPageProps> = ({ onClose }) => {
           <div className="relative rounded-2xl overflow-hidden border-2 border-[#C6A15B] shadow-[0_16px_36px_rgba(0,0,0,0.35)] group">
             <img
               src={EVENT_CONFIG.images.residence}
-              alt="Syed's Family Housewarming Residence Illuminated Villa"
+              alt="Housewarming Residence Illuminated Villa"
               className="w-full h-auto object-cover transform group-hover:scale-[1.02] transition-transform duration-700"
               referrerPolicy="no-referrer"
             />
@@ -182,20 +266,25 @@ export const InvitationPage: React.FC<InvitationPageProps> = ({ onClose }) => {
           </p>
         </section>
 
-        {/* Warm Signature: Showcasing Syed's Family */}
-        <footer className="text-center mt-6 pt-3 pb-2 relative z-10">
-          <p className="font-serif italic text-sm text-[#523B19]">
+        {/* 2. Closing Signature: “With warm regards and duas, THE SYED FAMILY” */}
+        <footer className="text-center mt-8 pt-5 pb-3 relative z-10 border-t border-[#C6A15B]/30 max-w-md mx-auto">
+          <p className="font-serif italic text-base sm:text-lg text-[#523B19] tracking-wide">
             {EVENT_CONFIG.copy.signatureGreeting}
           </p>
 
-          <p className="font-serif text-2xl sm:text-3xl font-bold text-[#123B30] tracking-wider mt-1">
+          <div className="w-20 h-[1.5px] bg-gradient-to-r from-transparent via-[#C6A15B] to-transparent mx-auto my-2.5" />
+
+          <p className="font-serif text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#123B30] tracking-[0.18em] uppercase mt-1 drop-shadow-sm">
             {EVENT_CONFIG.copy.signatureName}
           </p>
         </footer>
       </article>
 
+      {/* Countdown Timer to 17 October 2026 with Antique Gold Styling */}
+      <CountdownTimer className="mt-8" />
+
       {/* Structured Event Details */}
-      <EventDetails className="mt-8" />
+      <EventDetails className="mt-4" />
 
       {/* Venue Section (Google Maps Directions & WhatsApp RSVP) */}
       <VenueSection className="mt-4" />

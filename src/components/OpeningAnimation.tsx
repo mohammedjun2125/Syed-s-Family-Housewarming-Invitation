@@ -105,7 +105,7 @@ export const OpeningAnimation: React.FC<OpeningAnimationProps> = ({
                 <RoyalIslamicEmblem size={56} />
               </div>
               <p className="font-serif text-xs uppercase tracking-widest text-[#8F6B2C] font-semibold">
-                {EVENT_CONFIG.family}
+                AUSPICIOUS INVITATION
               </p>
               <h2 className="font-serif text-lg sm:text-xl font-bold text-[#0B211B] mt-0.5 uppercase">
                 {EVENT_CONFIG.occasion}

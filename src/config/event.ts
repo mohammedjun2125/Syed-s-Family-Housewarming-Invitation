@@ -18,6 +18,11 @@ export interface EventConfig {
     year: string;
     formatted: string;
     isoDate: string;
+    targetDateIso: string;
+  };
+  familyMembers: {
+    elders: Array<{ name: string; prefix: string }>;
+    hosts: Array<{ name: string }>;
   };
   time: {
     display: string;
@@ -84,6 +89,17 @@ export const EVENT_CONFIG: EventConfig = {
     year: "2026",
     formatted: "Saturday, 17 October 2026",
     isoDate: "2026-10-17",
+    targetDateIso: "2026-10-17T18:30:00",
+  },
+  familyMembers: {
+    elders: [
+      { name: "SYED AKBAR SAHAB", prefix: "LATE" },
+      { name: "SYED KAZAM SAHAB", prefix: "LATE" },
+    ],
+    hosts: [
+      { name: "SYED KHALIL SHEBAZ" },
+      { name: "SYED ARIF HAMZA" },
+    ],
   },
   time: {
     display: "After Maghrib",
@@ -101,7 +117,7 @@ export const EVENT_CONFIG: EventConfig = {
     phoneFormatted: "+91 72870 93906",
     phoneDigits: "917287093906",
     whatsappMessage:
-      "Assalamu Alaikum! Thank you for inviting me to Syed's Family housewarming ceremony on Saturday, 17 October 2026, after Maghrib. I would like to confirm my presence.",
+      "Assalamu Alaikum! Thank you for inviting me to the housewarming ceremony on Saturday, 17 October 2026, after Maghrib. I would like to confirm my presence.",
   },
   bismillah: {
     arabic: "بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ",
@@ -121,12 +137,12 @@ export const EVENT_CONFIG: EventConfig = {
     coverTagline: "AN INVITATION TO OUR NEW BEGINNING",
     coverSubtext: "With gratitude to Allah, we invite you to share in our happiness.",
     invitationGreeting:
-      "With the blessings and grace of Allah, Syed's Family warmly invites you to celebrate a beautiful new beginning with us.",
+      "With the blessings of Allah, we cordially invite you to celebrate the joy of our new home.",
     invitationBody:
-      "We would be honoured by your presence and prayers as we celebrate this special milestone in our lives. Please join us and bless our new home with your presence.",
-    closingBlessing: "YOUR PRESENCE WILL MAKE OUR NEW BEGINNING EVEN MORE SPECIAL.",
-    signatureGreeting: "Warm regards,",
-    signatureName: "Syed's Family",
+      "We would be honoured by your gracious presence and prayers as we celebrate this special milestone. Please join us and bless our new home with your presence.",
+    closingBlessing: "YOUR PRESENCE WILL MAKE OUR CELEBRATION EVEN MORE SPECIAL.",
+    signatureGreeting: "With warm regards and duas,",
+    signatureName: "THE SYED FAMILY",
   },
   colors: {
     emerald: "#123B30",

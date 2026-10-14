@@ -58,9 +58,9 @@ export const InvitationCover: React.FC<InvitationCoverProps> = ({ onOpen, isOpen
             <RoyalIslamicEmblem size={74} />
           </div>
 
-          {/* Family Showcase in English */}
-          <h2 className="font-serif text-sm sm:text-base font-bold uppercase tracking-[0.25em] text-[#FFE8B5] mb-2">
-            {EVENT_CONFIG.family}
+          {/* Cover Header */}
+          <h2 className="font-serif text-xs sm:text-sm font-bold uppercase tracking-[0.25em] text-[#FFE8B5] mb-2">
+            ROYAL INVITATION
           </h2>
 
           <div className="w-16 h-[1px] bg-gradient-to-r from-transparent via-[#E6C781] to-transparent mx-auto my-2" />
