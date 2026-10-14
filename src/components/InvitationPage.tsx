@@ -11,6 +11,7 @@ import { EventDetails } from './EventDetails';
 import { VenueSection } from './VenueSection';
 import { BlessingWall } from './BlessingWall';
 import { FloatingActionBar } from './FloatingActionBar';
+import { DigitalWaxSeal } from './DigitalWaxSeal';
 import { BookMarked, ArrowUp, Share2, Check } from 'lucide-react';
 
 interface InvitationPageProps {
@@ -339,6 +340,11 @@ export const InvitationPage: React.FC<InvitationPageProps> = ({ onClose }) => {
             {EVENT_CONFIG.copy.signatureName}
           </p>
         </footer>
+
+        {/* Interactive Digital Wax Seal: reveals heartfelt 'Thank You' message with flourish animation */}
+        <div className="relative z-10 pt-3 pb-2 border-t border-[#C6A15B]/20 max-w-md mx-auto">
+          <DigitalWaxSeal />
+        </div>
       </article>
 
       {/* Countdown Timer to 17 October 2026 with Antique Gold Styling */}

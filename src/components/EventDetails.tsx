@@ -2,7 +2,7 @@ import React from 'react';
 import { Calendar as CalendarIcon, Clock, Home } from 'lucide-react';
 import { EVENT_CONFIG } from '../config/event';
 import { OrnateDivider } from './IslamicOrnaments';
-import { CalendarButton } from './CalendarButton';
+
 
 export const EventDetails: React.FC<{ className?: string }> = ({ className = '' }) => {
   return (
@@ -63,11 +63,6 @@ export const EventDetails: React.FC<{ className?: string }> = ({ className = '' 
             A Blessed New Beginning
           </div>
         </div>
-      </div>
-
-      {/* Add To Calendar Feature */}
-      <div className="text-center">
-        <CalendarButton />
       </div>
     </section>
   );

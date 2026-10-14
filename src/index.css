@@ -147,3 +147,56 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #C6A15B90;
 }
+
+/* Subtle Animated Floating Floral Drifting (Islamic Geometry Inspired) */
+@keyframes floralDriftUpSlow {
+  0% {
+    transform: translateY(105vh) translateX(0) rotate(0deg) scale(0.85);
+    opacity: 0;
+  }
+  15% {
+    opacity: var(--floral-max-opacity, 0.22);
+  }
+  50% {
+    transform: translateY(50vh) translateX(25px) rotate(180deg) scale(1);
+    opacity: var(--floral-max-opacity, 0.22);
+  }
+  85% {
+    opacity: var(--floral-max-opacity, 0.22);
+  }
+  100% {
+    transform: translateY(-15vh) translateX(-20px) rotate(360deg) scale(0.9);
+    opacity: 0;
+  }
+}
+
+@keyframes floralDriftSwayAlt {
+  0% {
+    transform: translateY(105vh) translateX(0) rotate(0deg) scale(0.9);
+    opacity: 0;
+  }
+  15% {
+    opacity: var(--floral-max-opacity, 0.18);
+  }
+  50% {
+    transform: translateY(52vh) translateX(-30px) rotate(-180deg) scale(1.05);
+    opacity: var(--floral-max-opacity, 0.18);
+  }
+  85% {
+    opacity: var(--floral-max-opacity, 0.18);
+  }
+  100% {
+    transform: translateY(-15vh) translateX(25px) rotate(-360deg) scale(0.85);
+    opacity: 0;
+  }
+}
+
+.animate-floral-drift-1 {
+  animation: floralDriftUpSlow linear infinite;
+  will-change: transform, opacity;
+}
+
+.animate-floral-drift-2 {
+  animation: floralDriftSwayAlt linear infinite;
+  will-change: transform, opacity;
+}
