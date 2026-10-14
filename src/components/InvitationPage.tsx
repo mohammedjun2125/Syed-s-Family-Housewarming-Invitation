@@ -202,27 +202,22 @@ export const InvitationPage: React.FC<InvitationPageProps> = ({ onClose }) => {
               ❖
             </div>
 
-            {/* Respectful Reverence Header for Late Elders */}
+            {/* Respectful Header for Elders */}
             <div className="flex items-center justify-center gap-2 mb-4 relative z-10">
               <span className="h-[1px] w-10 sm:w-16 bg-gradient-to-r from-transparent to-[#C6A15B]" />
               <span className="text-[10px] sm:text-xs font-serif uppercase tracking-[0.24em] text-[#8F6B2C] font-semibold">
-                In Revered Remembrance &amp; Duas
+                With Blessings &amp; Duas of Elders
               </span>
               <span className="h-[1px] w-10 sm:w-16 bg-gradient-to-l from-transparent to-[#C6A15B]" />
             </div>
 
-            {/* Late Elders Names: Large, bold, clearly highlighted with word 'LATE' preserved & small cute aesthetic 'Mr. & Mrs.' */}
+            {/* Elders Names: Both with aesthetic 'Mr. & Mrs.', without 'LATE' */}
             <div className="space-y-3.5 sm:space-y-4 mb-5 sm:mb-6 relative z-10">
-              {/* LATE MR. & MRS. SYED AKBAR SAHAB */}
+              {/* MR. & MRS. SYED AKBAR SAHAB */}
               <div className="flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2.5 px-2">
-                <div className="flex items-center gap-1.5">
-                  <span className="inline-block px-2.5 py-0.5 rounded-full border border-[#C6A15B]/60 bg-[#FAF1DD] text-[#8F6B2C] font-serif text-[11px] sm:text-xs font-bold tracking-[0.2em] shadow-sm uppercase">
-                    LATE
-                  </span>
-                  <span className="inline-flex items-center px-2 py-0.5 rounded-md border border-[#C6A15B]/35 bg-[#FFFDF8] text-[#7A561E] font-serif text-[11px] sm:text-xs tracking-wider italic font-semibold shadow-xs">
-                    Mr. &amp; Mrs.
-                  </span>
-                </div>
+                <span className="inline-flex items-center px-2.5 py-0.5 rounded-md border border-[#C6A15B]/40 bg-[#FAF1DD] text-[#7A561E] font-serif text-[11px] sm:text-xs tracking-wider italic font-semibold shadow-xs">
+                  Mr. &amp; Mrs.
+                </span>
                 <h3 className="font-serif text-xl sm:text-2xl md:text-3xl font-bold tracking-wide text-[#123B30] uppercase">
                   SYED AKBAR SAHAB
                 </h3>
@@ -235,16 +230,11 @@ export const InvitationPage: React.FC<InvitationPageProps> = ({ onClose }) => {
                 <span className="w-12 h-[1px] bg-gradient-to-r from-transparent via-[#C6A15B]/40 to-transparent" />
               </div>
 
-              {/* LATE MR. SYED KAZAM SAHAB */}
+              {/* MR. & MRS. SYED KAZAM SAHAB */}
               <div className="flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2.5 px-2">
-                <div className="flex items-center gap-1.5">
-                  <span className="inline-block px-2.5 py-0.5 rounded-full border border-[#C6A15B]/60 bg-[#FAF1DD] text-[#8F6B2C] font-serif text-[11px] sm:text-xs font-bold tracking-[0.2em] shadow-sm uppercase">
-                    LATE
-                  </span>
-                  <span className="inline-flex items-center px-2 py-0.5 rounded-md border border-[#C6A15B]/35 bg-[#FFFDF8] text-[#7A561E] font-serif text-[11px] sm:text-xs tracking-wider italic font-semibold shadow-xs">
-                    Mr.
-                  </span>
-                </div>
+                <span className="inline-flex items-center px-2.5 py-0.5 rounded-md border border-[#C6A15B]/40 bg-[#FAF1DD] text-[#7A561E] font-serif text-[11px] sm:text-xs tracking-wider italic font-semibold shadow-xs">
+                  Mr. &amp; Mrs.
+                </span>
                 <h3 className="font-serif text-xl sm:text-2xl md:text-3xl font-bold tracking-wide text-[#123B30] uppercase">
                   SYED KAZAM SAHAB
                 </h3>
@@ -268,10 +258,10 @@ export const InvitationPage: React.FC<InvitationPageProps> = ({ onClose }) => {
                 Warmly Invited By
               </span>
 
-              {/* SYED KHALIL SHEBAZ */}
+              {/* SYED KHALIL SHAHBAZ */}
               <div className="relative py-2.5 sm:py-3 px-4 rounded-xl bg-gradient-to-r from-[#123B30]/5 via-[#123B30]/10 to-[#123B30]/5 border border-[#C6A15B]/40 shadow-sm">
                 <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-wider text-[#0B211B] uppercase leading-tight">
-                  SYED KHALIL SHEBAZ
+                  SYED KHALIL SHAHBAZ
                 </h2>
               </div>
 
