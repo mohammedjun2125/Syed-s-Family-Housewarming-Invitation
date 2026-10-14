@@ -258,10 +258,10 @@ export const InvitationPage: React.FC<InvitationPageProps> = ({ onClose }) => {
                 Warmly Invited By
               </span>
 
-              {/* SYED KHALIL SHAHBAZ */}
+              {/* SYED KHALIL SHEBAZ */}
               <div className="relative py-2.5 sm:py-3 px-4 rounded-xl bg-gradient-to-r from-[#123B30]/5 via-[#123B30]/10 to-[#123B30]/5 border border-[#C6A15B]/40 shadow-sm">
                 <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-wider text-[#0B211B] uppercase leading-tight">
-                  SYED KHALIL SHAHBAZ
+                  SYED KHALIL SHEBAZ
                 </h2>
               </div>
 

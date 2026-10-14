@@ -1,7 +1,7 @@
 /**
  * Ambient Islamic Housewarming Background Music Service
- * Single curated peaceful track: "Serene Housewarming Nasheed"
- * Default volume set to 15% for soft spiritual ambiance.
+ * Configured for custom user audio file: "background-music.mp3" in public/audio/
+ * Default volume set to 15% for serene ambiance.
  */
 
 type MusicStateListener = (state: {
@@ -11,9 +11,9 @@ type MusicStateListener = (state: {
 }) => void;
 
 export const DEFAULT_TRACK = {
-  title: 'Serene Housewarming Nasheed',
-  subtitle: 'Peaceful Spiritual Background Melody',
-  src: '/audio/islamic_housewarming_ambient.mp3',
+  title: 'Background Music',
+  subtitle: 'Custom Ambient Audio',
+  src: '/audio/background-music.mp3',
 };
 
 class BackgroundMusicService {
@@ -41,6 +41,13 @@ class BackgroundMusicService {
       this.audio.loop = true;
       this.audio.volume = this.volume;
       this.audio.src = DEFAULT_TRACK.src;
+
+      // Gracefully handle alternative location (e.g. if user places in public/ directly)
+      this.audio.addEventListener('error', () => {
+        if (this.audio && this.audio.src.includes('/audio/background-music.mp3')) {
+          this.audio.src = '/background-music.mp3';
+        }
+      });
     } catch {
       // Audio element error fallback
     }

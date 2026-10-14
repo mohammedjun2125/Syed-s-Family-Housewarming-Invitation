@@ -33,8 +33,8 @@ export const AudioToggle: React.FC<{ className?: string }> = ({ className = '' }
             ? 'bg-[#123B30]/90 border-[#E6C781] text-[#FFF4D9] shadow-[0_0_18px_rgba(230,199,129,0.35)]'
             : 'bg-[#0B211B]/85 border-[#C6A15B]/40 text-[#C6A15B]/80 hover:text-[#E6C781] hover:border-[#C6A15B]'
         }`}
-        aria-label={active ? 'Mute background music' : 'Unmute serene Islamic background music'}
-        title={active ? 'Mute background music' : 'Unmute serene housewarming nasheed (15% volume)'}
+        aria-label={active ? 'Mute background music' : 'Unmute background music'}
+        title={active ? 'Mute background music' : 'Unmute background music (15% volume)'}
       >
         {active ? (
           <>

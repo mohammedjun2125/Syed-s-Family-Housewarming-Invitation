@@ -97,7 +97,7 @@ export const EVENT_CONFIG: EventConfig = {
       { name: "SYED KAZAM SAHAB", prefix: "", honorific: "Mr. & Mrs." },
     ],
     hosts: [
-      { name: "SYED KHALIL SHAHBAZ" },
+      { name: "SYED KHALIL SHEBAZ" },
       { name: "SYED ARIF HAMZA" },
     ],
   },
