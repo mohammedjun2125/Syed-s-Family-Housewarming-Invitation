@@ -20,6 +20,19 @@ interface InvitationPageProps {
 
 export const InvitationPage: React.FC<InvitationPageProps> = ({ onClose }) => {
   const [copied, setCopied] = useState(false);
+  const [residenceImgSrc, setResidenceImgSrc] = useState(EVENT_CONFIG.images.residence);
+
+  const handleResidenceImgError = () => {
+    if (residenceImgSrc === '/images/residence.jpg') {
+      setResidenceImgSrc('/residence.jpg');
+    } else if (residenceImgSrc === '/residence.jpg') {
+      setResidenceImgSrc('/images/residence.png');
+    } else if (residenceImgSrc === '/images/residence.png') {
+      setResidenceImgSrc('/residence.png');
+    } else if (EVENT_CONFIG.images.defaultResidence && residenceImgSrc !== EVENT_CONFIG.images.defaultResidence) {
+      setResidenceImgSrc(EVENT_CONFIG.images.defaultResidence);
+    }
+  };
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -297,8 +310,9 @@ export const InvitationPage: React.FC<InvitationPageProps> = ({ onClose }) => {
           {/* Luxury Villa Image */}
           <div className="relative rounded-2xl overflow-hidden border-2 border-[#C6A15B] shadow-[0_16px_36px_rgba(0,0,0,0.35)] group">
             <img
-              src={EVENT_CONFIG.images.residence}
-              alt="Housewarming Residence Illuminated Villa"
+              src={residenceImgSrc}
+              onError={handleResidenceImgError}
+              alt="Housewarming Residence"
               className="w-full h-auto object-cover transform group-hover:scale-[1.02] transition-transform duration-700"
               referrerPolicy="no-referrer"
             />

@@ -74,6 +74,7 @@ export interface EventConfig {
   };
   images: {
     residence: string;
+    defaultResidence?: string;
     vintageBackground: string;
   };
 }
@@ -153,7 +154,8 @@ export const EVENT_CONFIG: EventConfig = {
     antiqueBrown: "#33241F",
   },
   images: {
-    residence: residenceImage,
+    residence: "/images/residence.jpg",
+    defaultResidence: residenceImage,
     vintageBackground: vintageBackground,
   },
 };
