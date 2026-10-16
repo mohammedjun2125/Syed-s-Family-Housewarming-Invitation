@@ -12,7 +12,8 @@ import { VenueSection } from './VenueSection';
 import { BlessingWall } from './BlessingWall';
 import { FloatingActionBar } from './FloatingActionBar';
 import { DigitalWaxSeal } from './DigitalWaxSeal';
-import { BookMarked, ArrowUp, Share2, Check } from 'lucide-react';
+import { CreatorPromotion } from './CreatorPromotion';
+import { BookMarked, ArrowUp, Share2, Check, Sparkles } from 'lucide-react';
 
 interface InvitationPageProps {
   onClose: () => void;
@@ -349,6 +350,19 @@ export const InvitationPage: React.FC<InvitationPageProps> = ({ onClose }) => {
         <div className="relative z-10 pt-3 pb-2 border-t border-[#C6A15B]/20 max-w-md mx-auto">
           <DigitalWaxSeal />
         </div>
+
+        {/* Creator Studio Hallmark on Parchment */}
+        <div className="relative z-10 pt-2 pb-1 text-center">
+          <a
+            href="https://www.instagram.com/the_digital_invitations?srtk=MWUya2I0bHc5cDVnbQ%3D%3D&utm_source=qr"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#EEDFC6]/70 hover:bg-[#EEDFC6] border border-[#C6A15B]/40 hover:border-[#C6A15B] text-[11px] font-serif tracking-wider text-[#7A561E] hover:text-[#123B30] transition-all group shadow-xs"
+          >
+            <Sparkles className="w-3 h-3 text-[#C6A15B] group-hover:rotate-12 transition-transform" />
+            <span>Digital Invitation by <strong className="font-semibold underline decoration-[#C6A15B]/60 underline-offset-2">@the_digital_invitations</strong></span>
+          </a>
+        </div>
       </article>
 
       {/* Countdown Timer to 17 October 2026 with Antique Gold Styling */}
@@ -363,8 +377,11 @@ export const InvitationPage: React.FC<InvitationPageProps> = ({ onClose }) => {
       {/* Interactive Blessing & Du'a Wall for the New Home */}
       <BlessingWall className="mt-4" />
 
+      {/* Creator Promotion: The Digital Invitations Instagram */}
+      <CreatorPromotion className="mt-8" />
+
       {/* Bottom Controls */}
-      <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8 pb-10 text-center">
+      <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8 pb-28 sm:pb-32 text-center">
         <button
           onClick={onClose}
           type="button"

@@ -140,6 +140,19 @@ export const InvitationBook: React.FC = () => {
             <p className="text-[11px] uppercase tracking-widest text-[#C6A15B]/90 font-medium">
               Tap to open
             </p>
+
+            <div className="pt-1">
+              <a
+                href="https://www.instagram.com/the_digital_invitations?srtk=MWUya2I0bHc5cDVnbQ%3D%3D&utm_source=qr"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-[10px] font-serif tracking-wider text-[#C6A15B]/75 hover:text-[#E6C781] transition-colors group"
+                title="Bespoke Digital Invitations on Instagram"
+              >
+                <span className="opacity-75 group-hover:opacity-100 transition-opacity">✨ By</span>
+                <span className="underline decoration-[#C6A15B]/40 underline-offset-2 font-medium">@the_digital_invitations</span>
+              </a>
+            </div>
           </footer>
         </main>
       )}
